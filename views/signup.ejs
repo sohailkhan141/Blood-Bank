@@ -1,0 +1,303 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+      body {
+        background-image: url(/img/bg.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        position: relative;
+        font-family: "Lato", sans-serif;
+      }
+      body:after {
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        opacity: 0.8;
+        z-index: -1;
+        background: #f12711;
+        background: -webkit-linear-gradient(to right, #f5af19, #f12711);
+        background: linear-gradient(to right, #f5af19, #f12711);
+      }
+      .register {
+        background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+        margin-top: 3%;
+        padding: 3%;
+      }
+      .register-left {
+        text-align: center;
+        color: #fff;
+        margin-top: 4%;
+      }
+      .register-left input {
+        border: none;
+        border-radius: 1.5rem;
+        padding: 2%;
+        width: 60%;
+        background: #f8f9fa;
+        font-weight: bold;
+        color: #383d41;
+        margin-top: 30%;
+        margin-bottom: 3%;
+        cursor: pointer;
+      }
+      .register-right {
+        background: #f8f9fa;
+        border-top-left-radius: 10% 50%;
+        border-bottom-left-radius: 10% 50%;
+      }
+      .register-left img {
+        margin-top: 15%;
+        margin-bottom: 5%;
+        width: 25%;
+        -webkit-animation: mover 2s infinite alternate;
+        animation: mover 1s infinite alternate;
+      }
+      @-webkit-keyframes mover {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(-20px);
+        }
+      }
+      @keyframes mover {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(-20px);
+        }
+      }
+      .register-left p {
+        font-weight: lighter;
+        padding: 12%;
+        margin-top: -9%;
+      }
+      .register .register-form {
+        padding: 10%;
+        margin-top: 10%;
+      }
+      .btnRegister {
+        float: right;
+        margin-top: 10%;
+        border: none;
+        border-radius: 1.5rem;
+        padding: 2%;
+        background: #0062cc;
+        color: #fff;
+        font-weight: 600;
+        width: 100%;
+        cursor: pointer;
+      }
+
+      .register .nav-tabs {
+        margin-top: 3%;
+        border: none;
+        background: #0062cc;
+        border-radius: 1.5rem;
+        width: 28%;
+        float: right;
+      }
+      .register .nav-tabs .nav-link {
+        padding: 2%;
+        height: 34px;
+        font-weight: 600;
+        color: #fff;
+        border-top-right-radius: 1.5rem;
+        border-bottom-right-radius: 1.5rem;
+      }
+      .register .nav-tabs .nav-link:hover {
+        border: none;
+      }
+      .register .nav-tabs .nav-link.active {
+        width: 100px;
+        color: #0062cc;
+        border: 2px solid #0062cc;
+        border-top-left-radius: 1.5rem;
+        border-bottom-left-radius: 1.5rem;
+      }
+      .register-heading {
+        text-align: center;
+        margin-top: 8%;
+        margin-bottom: -15%;
+        color: #495057;
+      }
+      .center1 {
+        margin-top: 30%;
+        text-align: center;
+      }
+      .rounded {
+        margin-left: 10%;
+        margin-right: 10%;
+      }
+      .backToHome:hover {
+        margin-left: -15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="register rounded bg-white mt-5 mb-5">
+      <div class="container">
+        <a
+          href="/"
+          class="backToHome"
+          style="color: #fff; text-decoration: none; font-size: x-large"
+          ><img
+            src="/img/arrow.png"
+            width="40px"
+            height="40px"
+            alt="back to home"
+          />&nbsp;&nbsp;Back to Home</a
+        >
+        <div class="row">
+          <div class="col-md-3 register-left">
+            <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+            <h3>Welcome</h3>
+            <p>We Care for your health</p>
+            <a href="/login"
+              ><input type="submit" name="" value="Login" /></a
+            ><br />
+          </div>
+          <div class="col-md-9 register-right">
+            <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  id="home-tab"
+                  data-toggle="tab"
+                  href="#home"
+                  role="tab"
+                  aria-controls="home"
+                  aria-selected="true"
+                  >Hospital</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  id="profile-tab"
+                  data-toggle="tab"
+                  href="#profile"
+                  role="tab"
+                  aria-controls="profile"
+                  aria-selected="false"
+                  >User</a
+                >
+              </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              <div
+                class="tab-pane fade show active"
+                id="home"
+                role="tabpanel"
+                aria-labelledby="home-tab"
+              >
+                <h3 class="register-heading">Apply as a Hospital</h3>
+                <div class="row register-form d-flex justify-content-center">
+                    <form action="/hospital/signup" method="post">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Name of the Hospital *"
+                        name="name"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <input
+                        type="email"
+                        class="form-control"
+                        placeholder="Your Email *"
+                        name="email"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <input
+                        type="password"
+                        class="form-control"
+                        placeholder="Password *"
+                        name="password"
+                        required
+                      />
+                    </div>
+                    <input type="submit" class="btnRegister" value="Register" />
+                  </div>
+                  </form>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade show"
+                id="profile"
+                role="tabpanel"
+                aria-labelledby="profile-tab"
+              >
+                <h3 class="register-heading">Apply as a User</h3>
+                <div class="row register-form d-flex justify-content-center">
+                    <form action="/user/signup" method="post">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Name *"
+                        name="name"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <input
+                        type="email"
+                        class="form-control"
+                        placeholder="Email *"
+                        name="email"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <input
+                        type="password"
+                        class="form-control"
+                        placeholder="Password *"
+                        name="password"
+                        required
+                      />
+                    </div>
+                    <input type="submit" class="btnRegister" value="Register" />
+                    <p class="center1">OR</p>
+                    <a
+                        href="/user/oauth/google/signup"
+                      class="btnRegister text-center"
+                      value="Register With Google"
+                      style="color: #fff;"
+                    >Register With Google</a>
+                </div>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript"></script>
+  </body>
+</html>

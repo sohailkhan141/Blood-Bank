@@ -1,0 +1,46 @@
+body {
+    background-image: url(/img/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    font-family: 'Lato', sans-serif;
+}
+    body:after {
+      position: absolute;
+      content: "";
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      opacity: .8;
+      z-index: -1;
+      background: #f12711;
+      background: -webkit-linear-gradient(to right, #f5af19, #f12711);
+      background: linear-gradient(to right, #f5af19, #f12711); }
+h2 {
+ color: #000000;
+ font-size:x-large;
+
+}
+h6{
+    color: #000000;
+    font-family: 'Open Sans Condensed', sans-serif; 
+}
+
+.profile-button {
+    background: #f12711;
+    background: -webkit-linear-gradient(to right, #f5af19, #f12711);
+    background: linear-gradient(to right, #f5af19, #f12711); 
+    box-shadow: none;
+    border: none
+}
+ .col-md-8:hover{
+    box-shadow: none;
+    border-color: tomato;
+}
+.rounded {
+    margin-left: 10%;
+    margin-right: 10%;
+}

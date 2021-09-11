@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blood Bank | Write Blog</title>
+    <!-- bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="/styles/header.css" />
+    <script src="/scripts/header.js" defer></script>
+    <link rel="stylesheet" href="/styles/writeBlog.css" />
+    <script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
+</head>
+  <body>
+    <section class="rounded bg-white mt-5 mb-5">
+      <%- include("./header") %>
+      <div class="container mt-5">
+        <form action="/blog/submit" method="POST" enctype="multipart/form-data">
+          <div class="heading">
+            <h2>Add New Post</h2>
+          </div>
+          <div class="input-group mb-3">
+            <div class="col-md-8">
+              <input
+                type="text"
+                class="form-control"
+                id="inputGroupFile02"
+                placeholder="Enter Title Here"
+                name="title"
+                required
+              />
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <div class="col-md-8">
+              <h6>Add Poster</h6>
+              <input
+                type="file"
+                class="form-control"
+                id="inputGroupFile02"
+                name="image"
+              />
+            </div>
+          </div>
+          <div>
+            <h6>Write your blog below</h6>
+          </div>
+          <div class="input-group mb-3">
+            <div class="col-md-8">
+              <textarea name="editor1" id="content" value="" onchange="contentChange(event)"></textarea>
+            </div>
+          </div>
+          <div class="">
+            <div class="col-md-8">
+              <div class="mt-5 text-right">
+                <button class="btn btn-primary profile-button" type="submit">
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+          &nbsp;
+        </form>
+      </div>
+    </section>
+    <script>
+      CKEDITOR.replace("editor1");
+      function contentChange(e){
+        e.preventDefault();
+        var x = CKEDITOR.instances.content.getData();
+        document.querySelector("textarea").value = x;
+      }
+    </script>
+  </body>
+</html>

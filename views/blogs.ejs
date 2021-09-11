@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Bank | Blog</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/styles/header.css" />
+    <script src="/scripts/header.js" defer></script>
+    <link rel="stylesheet" href="/styles/blog.css">
+  
+</head>
+
+<body>
+    <section class="rounded bg-white mt-5">
+        <%- include("./header") %>
+    <div class="container">
+        <div class="heading">
+            <h1><%= info.title %></h1>
+        </div>
+        <div class="user_image">
+            <img class="image" src=http://localhost:5000/<%= user.photo %> alt="">
+            <div class="userinformation">
+                <span class="Name"><%= user.name %></span>
+                <span class="Date"><%= moment(info.createdAt).format("MMM Do YY") %></span>
+            </div>
+        </div>
+        <div class="picture">
+            <img src=http://localhost:5000/<%= info.poster %> alt="" class="pic">
+        </div>
+        <div class="article">
+            <%- info.content %>
+        </div>
+    </div>
+    </section>
+</body>
+
+</html>

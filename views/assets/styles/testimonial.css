@@ -1,0 +1,59 @@
+body {
+    background-image: url(/img/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    font-family: 'Lato', sans-serif;
+}
+    body:after {
+      position: absolute;
+      content: "";
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      opacity: .8;
+      z-index: -1;
+      background: #f12711;
+      background: -webkit-linear-gradient(to right, #f5af19, #f12711);
+      background: linear-gradient(to right, #f5af19, #f12711); }
+
+h2{
+ font-size:x-large;
+}
+h6{
+    font-family: 'Open Sans Condensed', sans-serif; 
+}
+p{
+    font-size: 11px;
+}
+span{
+    color: red;
+}
+.profile-button {
+    background: #f12711;
+    background: -webkit-linear-gradient(to right, #f5af19, #f12711);
+    background: linear-gradient(to right, #f5af19, #f12711); 
+    box-shadow: none;
+    border: none
+}
+
+.profile-button:hover {
+    background: #f12711;
+}
+
+.profile-button:focus {
+    background: #f12711;
+    box-shadow: none
+}
+
+.profile-button:active {
+    background: #f12711;
+    box-shadow: none
+}
+.rounded {
+    margin-left: 10%;
+    margin-right: 10%;
+}

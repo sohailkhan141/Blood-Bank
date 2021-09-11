@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-custom navbar-mainbg">
+    <a class="navbar-brand navbar-logo" href="#">Cipher:Blood+</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-bars text-white"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+            <li class="nav-item">
+                <a class="nav-link" href="/blood-bank"><i class="fas fa-tachometer-alt"></i>Blood Bank</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/donation-camp"><i class="far fa-address-book"></i>Donation Events</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/blog/post/write"><i class="far fa-clone"></i>Blog</a>
+            </li>
+            <% if(!isAuth){ %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login"><i class="far fa-calendar-alt"></i>SignIn</a>
+                </li>
+                <!--<li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-chart-bar"></i></a>
+                </li>-->
+                <li class="nav-item">
+                    <a class="nav-link" href="/signup"><i class="far fa-copy"></i>SignUp</a>
+                </li>
+            <% }else{ %>
+                <% if(nowUser.role){ %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user/profile"><i class="far fa-calendar-alt"></i><%= nowUser.name %></a>
+                    </li>
+                 <% }else{ %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/hospital/profile"><i class="far fa-calendar-alt"></i><%= nowUser.name %></a>
+                    </li>
+                <% } %>
+                <!--<li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-chart-bar"></i></a>
+                </li>-->
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout"><i class="far fa-copy"></i>Logout</a>
+                </li>
+            <%}%>
+        </ul>
+    </div>
+</nav>

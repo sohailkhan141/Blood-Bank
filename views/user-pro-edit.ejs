@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User profile</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="/styles/header.css" />
+    <script src="/scripts/header.js" defer></script>
+    <link rel="stylesheet" href="/styles/user-edit-pro.css" />
+    <script src="/scripts/user-pro-edit.js"></script>
+  </head>
+
+  <body>
+    <div class="rounded bg-white mt-5 mb-5">
+      <%- include("./header") %>
+      <div class="container">
+        <form
+        action="/user/save-profile"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <div class="row">
+          <div class="col-md-4 border-right">
+            <div
+              class="d-flex flex-column align-items-center text-center p-3 py-5"
+            >
+              <img class="rounded-circle mt-5" src=http://localhost:5000/<%=
+              user.photo %> width="90" height="90" />
+              <input
+                hidden
+                type="file"
+                id="pickPhoto"
+                name="image"
+                accept="image/*"
+              />
+              <button
+                class="btn btn-primary profile-button"
+                type="button"
+                onclick="takePhoto()"
+              >
+                <i class="fa fa-fw fa-camera"></i>
+                <span>Change Photo</span>
+              </button>
+            </div>
+            <div class="row mt-3">
+              <div class="col-md-12">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="User Name"
+                  readonly
+                  value= <%= user.name %>
+                />
+              </div>
+            </div>
+            <% var method = user.method; %>
+            <div class="row mt-3">
+              <div class="col-md-12">
+                  <% if(method==="local"){ %>
+                      <input type="email" readonly class="form-control" placeholder="Email" value=<%= user.local.email %> >
+                    <% }else{ %>
+                      <input type="email" readonly class="form-control" placeholder="Email" value=<%= user.google.email %> >
+                  <% } %>
+              </div>
+            </div>
+            <br />
+          </div>
+
+          <div class="col-md-8">
+            <div class="p-3 py-5">
+              <div
+                class="d-flex justify-content-between align-items-center mb-3"
+              >
+                <div class="d-flex flex-row align-items-center back">
+                  <h6 class="text-right">Edit Profile</h6>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-md-6">
+                  <select
+                    onchange="print_city('state', this.selectedIndex);"
+                    id="sts"
+                    name="state"
+                    class="form-control"
+                    required
+                  >
+                  <!-- <option value=<%= user.state %>><%= user.state %></option> -->
+                </select>
+                </div>
+                <div class="col-md-6">
+                  <select
+                    id="state"
+                    class="form-control"
+                    name="city"
+                    required
+                  >
+                  <option value=<%= user.city %>><%= user.city %></option>
+                </select>
+                </div>
+                <script language="javascript">
+                  print_state("sts");
+                </script>
+              </div>
+              <div class="row mt-3">
+                <div class="col-md-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="ZIP code"
+                    name="zipcode"
+                    required
+                    value=<%= user.zipcode %>
+                  />
+                </div>
+                <div class="col-md-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Phone number"
+                    name="phone"
+                    required
+                    value=<%= user.phone %>
+                  >
+                </div>
+              </div>
+
+              <div class="row mt-3">
+                <div class="col-md-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Your Blood Group"
+                    name="bloodGroup"
+                    value=<%= user.bloodGroup %>
+                  >
+                </div>
+              </div>
+
+              <div class="row mt-3">
+                <div class="col-md-12">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Your Address"
+                    name="address"
+                    value=<%= user.address %>
+                  >
+                </div>
+              </div>
+              <div class="mt-5 text-right">
+                <button class="btn btn-primary profile-button" type="submit">
+                  Save Profile
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      function takePhoto() {
+        document.getElementById("pickPhoto").click();
+      }
+    </script>
+  </body>
+</html>

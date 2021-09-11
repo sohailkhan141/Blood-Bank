@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blood bank | User Profile</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/styles/header.css" />
+    <script src="/scripts/header.js" defer></script>
+    <link rel="stylesheet" href="/styles/user-pro.css" />
+  </head>
+
+  <body>
+    <div class="rounded bg-white mt-5 mb-5">
+      <%- include("./header") %>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 border-right">
+            <div
+              class="d-flex flex-column align-items-center text-center p-3 py-5"
+            >
+              <img class="rounded-circle mt-5" src=http://localhost:5000/<%=
+              user.photo %> width="90" height="90">
+            </div>
+            <div class="row mt-3">
+              <div class="col-md-12"><h5 id="h-5"><%= user.name %></h5></div>
+            </div>
+            <% var method = user.method; %>
+            <div class="row mt-3">
+              <% if(method==="local"){ %>
+              <div class="col-md-12">
+                <h5 id="h-5"><%= user.local.email %></h5>
+              </div>
+              <% }else{ %>
+              <div class="col-md-12">
+                <h5 id="h-5"><%= user.google.email %></h5>
+              </div>
+              <% } %>
+            </div>
+            <br />
+          </div>
+
+          <div class="col-md-8">
+            <div class="p-3 py-5">
+              <div
+                class="d-flex justify-content-between align-items-center mb-3"
+              >
+                <div class="d-flex flex-row align-items-center back">
+                  <a
+                    href="/user/edit-profile"
+                    class="btn btn-primary profile-button text-right"
+                    type="button"
+                    style="color: white; text-decoration: none"
+                  >
+                    <span>Edit Profile</span>
+                  </a>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-md-6">
+                  <label for="">State :</label>
+                  <h5><%= user.state %></h5>
+                </div>
+                <div class="col-md-6">
+                  <label for="">City :</label>
+                  <h5><%= user.city %></h5>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-md-6">
+                  <label for="">ZIP code:</label>
+                  <h5><%= user.zipcode %></h5>
+                </div>
+                <div class="col-md-6">
+                  <label for="">Phone no. :</label>
+                  <h5><%= user.phone %></h5>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-md-12">
+                  <label for="">Address :</label>
+                  <h5><%= user.address %></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

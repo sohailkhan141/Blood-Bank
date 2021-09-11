@@ -1,0 +1,63 @@
+body {
+  background-image: url(/img/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  font-family: "Lato", sans-serif;
+}
+body:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  opacity: 0.8;
+  z-index: -1;
+  background: #f12711;
+  background: -webkit-linear-gradient(to right, #f5af19, #f12711);
+  background: linear-gradient(to right, #f5af19, #f12711);
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #f12711;
+}
+
+.profile-button {
+  background: #f12711;
+  background: -webkit-linear-gradient(to right, #f5af19, #f12711);
+  background: linear-gradient(to right, #f5af19, #f12711);
+  box-shadow: none;
+  border: none;
+}
+
+.profile-button:hover {
+  background: #f12711;
+}
+
+.profile-button:focus {
+  background: #f12711;
+  box-shadow: none;
+}
+
+.profile-button:active {
+  background: #f12711;
+  box-shadow: none;
+}
+
+.back:hover {
+  color: #f12711;
+  cursor: pointer;
+}
+
+#h-5 {
+  display: flex;
+  justify-content: center;
+}
+.rounded {
+  margin-right: 10%;
+  margin-left: 10%;
+}
